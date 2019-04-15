@@ -348,6 +348,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6919931339261021199}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1889872221 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6919931338981778770, guid: 86a75c764a090ac40af4301a93415bea,
+    type: 3}
+  m_PrefabInstance: {fileID: 6919931339261021199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1889872222 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6919931338981778769, guid: 86a75c764a090ac40af4301a93415bea,
@@ -477,10 +483,37 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6919931338981778769, guid: 86a75c764a090ac40af4301a93415bea,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 544491386ef670343a5877c1e4c66db0,
+        type: 3}
+    - target: {fileID: 6919931338981778769, guid: 86a75c764a090ac40af4301a93415bea,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919931338981778769, guid: 86a75c764a090ac40af4301a93415bea,
+        type: 3}
+      propertyPath: m_Text
+      value: You know what? This is the worst font I have ever seen... My boys don't
+        need to impress me. They're my boys
+      objectReference: {fileID: 0}
     - target: {fileID: 6446765686088078984, guid: 86a75c764a090ac40af4301a93415bea,
         type: 3}
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 1889872222}
+    - target: {fileID: 6446765686088078984, guid: 86a75c764a090ac40af4301a93415bea,
+        type: 3}
+      propertyPath: dialogueTextContainer
+      value: 
+      objectReference: {fileID: 1889872221}
+    - target: {fileID: 6979622667233767837, guid: 86a75c764a090ac40af4301a93415bea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86a75c764a090ac40af4301a93415bea, type: 3}
