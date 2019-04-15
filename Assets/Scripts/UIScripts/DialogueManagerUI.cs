@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Handles all the logic when in a dialogue state.
@@ -24,9 +25,20 @@ public class DialogueManagerUI : MonoBehaviour
     #endregion static variables
 
     #region monobehaviour methods
+    [Header("UI References")]
+    public Text dialogueText;
+
+    public Transform dialogueTextContainer;
+    private DialogueEvent currentlyAssignedDialogueEvent;
+    [Tooltip("Animator component that will drive certain animation events within our dialogue manager")]
+    private Animator anim;
+
+
     private void Awake()
     {
         instance = this;
+        CloseDialogueManagerUI();
+        anim = GetComponent<Animator>();
     }
     #endregion monobehaviour methods
 
@@ -34,17 +46,19 @@ public class DialogueManagerUI : MonoBehaviour
     /// <summary>
     /// Opens the dialuge UI
     /// </summary>
-    private void OpenDialogueManagerUI()
+    public void OpenDialogueManagerUI(DialogueEvent dialogueEvent)
     {
-        this.gameObject.SetActive(true);
+        dialogueTextContainer.gameObject.SetActive(true);
+        this.enabled = true;
+        this.currentlyAssignedDialogueEvent = dialogueEvent;
     }
-
 
     /// <summary>
     /// Safely closes the dialogue manager and takes care of any actions needed upon closing the dialogue menu
     /// </summary>
-    private void CloseDialogueManagerUI()
+    public void CloseDialogueManagerUI()
     {
-        this.gameObject.SetActive(false);
+        dialogueTextContainer.gameObject.SetActive(false);
+        this.enabled = true;
     }
 }

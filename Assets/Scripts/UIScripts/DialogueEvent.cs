@@ -11,6 +11,13 @@ public class DialogueEvent : MonoBehaviour
     public DialogueNode[] dialogueNodeList = new DialogueNode[1];
     private int index = 0;
 
+    #region monobehaviour methods
+    private void Start()
+    {
+        DialogueManagerUI.Instance.OpenDialogueManagerUI(this);
+    }
+    #endregion monobehavioue methods
+
     public DialogueNode ResetDialogueEvent()
     {
         index = 0;
