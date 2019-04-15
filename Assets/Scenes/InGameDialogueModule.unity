@@ -323,11 +323,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueNodeList:
-  - dialogue: Hello? Hey! Wake up!
-  - dialogue: Hm? Who are you?
-  - dialogue: Oh don't be silly! You know who I am
-  - dialogue: Hello? Hey! Wake up!
-  - dialogue: Hello? Hey! Wake up!
+  - dialogue: Oh look a human! I haven't seen one of your kind in one year, 24 days
+      and 10 hours
+  - dialogue: Excuse me?
+  - dialogue: Its just surprising, you know. I thought you all were forced to leave
+      after we learned earth was uninhabitable.
+  - dialogue: Oh wait! You're not a human are you. Haha, Looks like your firmware
+      is so old it has no identifier. You just have that archaic barcode thing.
+  - dialogue: Interesting. I thought all of you were supposed to be scrapped like
+      forever ago. You're not really up to code you know. But don't worry I won't
+      tell.
 --- !u!4 &585937869
 Transform:
   m_ObjectHideFlags: 0
@@ -348,24 +353,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6919931339261021199}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1889872221 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6919931338981778770, guid: 86a75c764a090ac40af4301a93415bea,
-    type: 3}
-  m_PrefabInstance: {fileID: 6919931339261021199}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1889872222 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6919931338981778769, guid: 86a75c764a090ac40af4301a93415bea,
-    type: 3}
-  m_PrefabInstance: {fileID: 6919931339261021199}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6919931339261021199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -483,37 +470,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6919931338981778769, guid: 86a75c764a090ac40af4301a93415bea,
-        type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 544491386ef670343a5877c1e4c66db0,
-        type: 3}
-    - target: {fileID: 6919931338981778769, guid: 86a75c764a090ac40af4301a93415bea,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6919931338981778769, guid: 86a75c764a090ac40af4301a93415bea,
-        type: 3}
-      propertyPath: m_Text
-      value: You know what? This is the worst font I have ever seen... My boys don't
-        need to impress me. They're my boys
-      objectReference: {fileID: 0}
     - target: {fileID: 6446765686088078984, guid: 86a75c764a090ac40af4301a93415bea,
         type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 1889872222}
-    - target: {fileID: 6446765686088078984, guid: 86a75c764a090ac40af4301a93415bea,
-        type: 3}
-      propertyPath: dialogueTextContainer
-      value: 
-      objectReference: {fileID: 1889872221}
-    - target: {fileID: 6979622667233767837, guid: 86a75c764a090ac40af4301a93415bea,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
+      propertyPath: lettersPerSecond
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86a75c764a090ac40af4301a93415bea, type: 3}
