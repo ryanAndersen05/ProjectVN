@@ -88,6 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 6919931338981778769}
   dialogueTextContainer: {fileID: 6979622667233767837}
+  lettersPerSecond: 10
 --- !u!1 &6919931338981778771
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,8 +155,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 544491386ef670343a5877c1e4c66db0, type: 3}
+    m_FontSize: 75
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 5
@@ -166,8 +167,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is a dialogue box. This is where you will enter text and other stuff.
-    It appears that you can enter
+  m_Text: You know what? This is the worst font I have ever seen... My boys don't
+    need to impress me. They're my boys
 --- !u!1 &6919931339346418846
 GameObject:
   m_ObjectHideFlags: 0

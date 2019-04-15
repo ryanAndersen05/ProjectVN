@@ -8,6 +8,10 @@ using UnityEngine.UI;
 /// </summary>
 public class DialogueManagerUI : MonoBehaviour
 {
+    #region const variables
+    private const string SELECT_BUTTON = "Submit";
+    #endregion const variables
+
     #region static vairables
     private static DialogueManagerUI instance;
 
@@ -27,11 +31,15 @@ public class DialogueManagerUI : MonoBehaviour
     #region monobehaviour methods
     [Header("UI References")]
     public Text dialogueText;
-
     public Transform dialogueTextContainer;
+
+    [Header("Dialogue UI Settings")]
+    public int lettersPerSecond = 10;
+
     private DialogueEvent currentlyAssignedDialogueEvent;
     [Tooltip("Animator component that will drive certain animation events within our dialogue manager")]
     private Animator anim;
+    private bool isDrawingText;
 
 
     private void Awake()
@@ -40,8 +48,24 @@ public class DialogueManagerUI : MonoBehaviour
         CloseDialogueManagerUI();
         anim = GetComponent<Animator>();
     }
-    #endregion monobehaviour methods
 
+    private void Update()
+    {
+        if (Input.GetButtonDown(SELECT_BUTTON) && !isDrawingText)
+        {
+            DrawNextDialogueNode(currentlyAssignedDialogueEvent.GetNextDialogueNode());
+        }
+    }
+    #endregion monobehaviour methods
+    private void DrawNextDialogueNode(DialogueEvent.DialogueNode dialogueNode)
+    {
+        if (dialogueNode == null)
+        {
+            CloseDialogueManagerUI();
+            return;
+        }
+        StartCoroutine(DrawOutTextToTextBox(dialogueNode.dialogue));
+    }
 
     /// <summary>
     /// Opens the dialuge UI
@@ -51,6 +75,7 @@ public class DialogueManagerUI : MonoBehaviour
         dialogueTextContainer.gameObject.SetActive(true);
         this.enabled = true;
         this.currentlyAssignedDialogueEvent = dialogueEvent;
+        DrawNextDialogueNode(dialogueEvent.ResetDialogueEvent());
     }
 
     /// <summary>
@@ -59,6 +84,36 @@ public class DialogueManagerUI : MonoBehaviour
     public void CloseDialogueManagerUI()
     {
         dialogueTextContainer.gameObject.SetActive(false);
-        this.enabled = true;
+        this.enabled = false;
+    }
+
+    private IEnumerator DrawOutTextToTextBox(string textToDraw)
+    {
+        isDrawingText = true;
+
+        float timeThatHasPassed = 0;
+        float timeToWaitBetweenLetters = 1f / lettersPerSecond;
+        string textDrawnSoFar = "";
+
+        while (textDrawnSoFar.Length != textToDraw.Length)
+        {
+            timeThatHasPassed += Time.deltaTime;
+            yield return null;
+            if (Input.GetButtonDown(SELECT_BUTTON))
+            {
+                textDrawnSoFar = textToDraw;
+                dialogueText.text = textToDraw;
+
+            }
+            else if (timeThatHasPassed > timeToWaitBetweenLetters)
+            {
+                textDrawnSoFar = textToDraw.Substring(0, textDrawnSoFar.Length + 1);
+                timeThatHasPassed = 0;
+                timeToWaitBetweenLetters = 1f / lettersPerSecond;
+                dialogueText.text = textDrawnSoFar;
+            }
+        }
+        isDrawingText = false;
+        dialogueText.text = textToDraw;
     }
 }
